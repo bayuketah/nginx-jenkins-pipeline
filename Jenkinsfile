@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Deploy to EKS') {
       steps {
-        sh 'kubectl apply -f nginx-deployment.yaml'
+        sh 'kubectl apply -f nginx-deployment.yml'
       }
     }
   }
