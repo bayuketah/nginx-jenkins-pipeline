@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: brittanylordes/nginx-demo:latest
+        image: nginx:latest
         ports:
         - containerPort: 80
 ---
@@ -25,11 +25,11 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: LoadBalancer
   selector:
     app: nginx
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
+  type: LoadBalancer
 
